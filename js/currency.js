@@ -4,8 +4,8 @@ var moreConvertorBtn = document.querySelector("#more-currency-convertor-btn");
 var select1 = document.querySelector("#currencyDdl1");
 var select2 = document.querySelector("#currencyDdl2");
 var end_result = document.querySelector("#result-display");
-var more_input_1 = document.querySelector("#more-input-1").value;
-var more_input_2 = document.querySelector("#more-input-2").value;
+var more_input_1 = document.querySelector("#more-input-1");
+var more_input_2 = document.querySelector("#more-input-2");
 var result_value;
 
 fetch("./json/currencies.json")
@@ -28,22 +28,22 @@ moreConvertorBtn.addEventListener("click", displayMoreResults);
 
 function displayMoreResults() {
     moreConvertorBtn.innerHTML = `<i class='bi bi-arrow-clockwise'></i> Converting...`;
-    if (more_input_1.value > 0) {
+    if (parseInt(more_input_1.value)) {
         var res = result_value * more_input_1.value;
         document.querySelector("#more-input-2").value = res;
     } else {
         moreConvertorBtn.innerHTML = `Convert`;
-        more_input_1.value = "";
         alert("Invalid Input");
         return;
     }
+    moreConvertorBtn.innerHTML = `Convert`;
 
     console.log(res);
 }
 
 function resetValues() {
     more_input_1.value = "";
-    more_input_1.value = "";
+    more_input_2.value = "";
 }
 
 function displayResults() {
@@ -67,18 +67,26 @@ function displayResults() {
             ).innerHTML = ` <strong>Note: 1 ${convert_from} </strong>equals <strong>${result_value} ${convert_to}</strong>`;
             document.querySelector("#form-label-1").innerHTML = convert_from;
             document.querySelector("#form-label-2").innerHTML = convert_to;
-            end_result.innerHTML = `<div class="col-2">
-            </div> <div class="col-8 ">
-            <div class="alert alert-dark" role="alert">
-            <h4 class="alert-heading">Converted Successfully! 
-            <button type="button" class="btn btn-secondary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            More Calculations?</button>
-            <hr>
-            <p class="mb-0 text-uppercase ">
-            <strong>1 ${convert_from} </strong>equals <strong>${result_value} ${convert_to}</strong>
-            </p>
-        </div>
-        </div>
-        <div class="col-2"></div>`;
+            end_result.innerHTML = `
+            <div class="col-lg-2 col-sm-12 col-md-12"></div>
+            <div class="col-lg-8 col-sm-12 col-md-12">
+                <div class="alert alert-dark" role="alert">
+                    <div class="row">
+                        <h4 class="alert-heading">Converted Successfully! </h4>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <p class="mb-0 text-uppercase ">
+                            <strong>1 ${convert_from} </strong>equals <strong>${result_value} ${convert_to}</strong>
+                        </p>
+                    </div>
+
+                    <div class="row my-4 mb-0">
+                        <button type="button" class="mx-3 btn btn-secondary btn-sm float-end w-50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        More Calculations?</button></div>
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-12 col-md-12"></div>`;
         });
 }
