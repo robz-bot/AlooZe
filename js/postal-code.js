@@ -115,6 +115,7 @@ function binding_result(data) {
         }
     } else {
         bind_postal_list.innerHTML = "";
+        postal_list_heading.innerHTM = "";
         var res_html = `
                     <div class="row">
                         <div class="col-lg-2 col-sm-12 col-md-12"></div>
