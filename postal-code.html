@@ -43,56 +43,44 @@
                     <i class="bi bi-balloon-heart-fill fs-1"></i>
                     <strong><h1>AlooZe</h1></strong>
                 </a>
+                <h3 class="text-light"><i class='bi bi-mailbox2'></i> PIN - Post Index Number</h3>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             </div>
         </div>
     </header>
-    <!-- Random Quotes  -->
-    <div class="container">
-        <div class="alert alert-primary" role="alert">
-            <figure class="text-center">
-                <blockquote class="blockquote">
-                    <p id="random-quote"></p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    <cite title="Author" id="random-quote-author"></cite>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-    <!-- Title Cards  -->
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img class="card-img-top" alt="Loading image" id="card-img1">
-                    <div class="card-body">
-                        <a href="./currency-change.html" class="text-decoration-none">
-                            <h5 class="card-title text-capitalize text-blue" id="title1"></h5>
-                        </a>
-                        <p class="card-text" id="content1"></p>
-                    </div>
+    <!-- Postal Code  -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-2 col-sm-12 col-md-12"></div>
+            <div class="col-lg-8 col-sm-12 col-md-12">
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Search By</label>
+                    <select class="form-select w-25" id="search_Postal_type">
+                        <option value="pin">PIN Code</option>
+                        <option value="branch">Post Office Branch</option>
+                    </select>
+                    <input type="text" id="postal_Input" class="form-control">
+                    <input type="button" name="" id="search_Postal" class="btn bg-blue" value="Search">
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img class="card-img-top" alt="Loading image" id="card-img2">
-                    <div class="card-body">
-                        <a href="./postal-code.html" class="text-decoration-none">
-                            <h5 class="card-title text-capitalize text-blue" id="title2"></h5>
-                        </a>
-                        <p class="card-text" id="content2"></p>
-                    </div>
-                </div>
-            </div>
+            <div class="col-lg-2 col-sm-12 col-md-12"></div>
+        </div>
+        <div class="row" id="postal_error"></div>
+        <div class="row container" id="postal_success">
+            <h4 id="postal_list_heading"></h4>
+            <ol class="list-group list-group-horizontal-lg d-flex flex-wrap align-content-center justify-content-between" id="bind_postal_list">
+
+            </ol>
+
         </div>
     </div>
+
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- <script src="./js/index.js"></script> -->
-    <script src="./js/home.js"></script>
+    <script src="./js/postal-code.js"></script>
 </body>
 
 </html>
