@@ -61,7 +61,7 @@ function binding_result(data) {
         for (var i = 0; i < data[0].PostOffice.length; i++) {
             console.log(data[0].PostOffice[i]);
             postal_list_heading.innerHTML = data[0].Message;
-            res_html += `<li class="list-group-item d-flex justify-content-between align-items-start my-2" style="border-left-width: 1px; max-width:min-content">
+            res_html += `<li class="list-group-item d-flex align-items-start my-2" style="border-left-width: 1px; max-width:min-content">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold fs-0 text-decoration-underline">${
                           data[0].PostOffice[i].Name
@@ -114,7 +114,7 @@ function binding_result(data) {
             bind_postal_list.innerHTML = res_html;
         }
     } else {
-        // if (data.PostOffice == null || data.PostOffice == undefined) {
+        bind_postal_list.innerHTML = "";
         var res_html = `
                     <div class="row">
                         <div class="col-lg-2 col-sm-12 col-md-12"></div>
