@@ -51,7 +51,9 @@ function fetchNews(category) {
                                 <h5 class="card-title text-black">${
                                   data.data[i].title
                                 }</h5>
-                                <p class="card-text text-lg-start bg-success p-2 text-dark">${
+                                <p class="card-text text-lg-start bg-success p-2 text-dark"
+                                style="border-radius: 10px;
+                                border: 1px solid white;">${
                                   data.data[i].content
                                 }
                                 </p>
