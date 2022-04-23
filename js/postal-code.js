@@ -61,7 +61,8 @@ function binding_result(data) {
         for (var i = 0; i < data[0].PostOffice.length; i++) {
             console.log(data[0].PostOffice[i]);
             postal_list_heading.innerHTML = data[0].Message;
-            res_html += `<li class="list-group-item d-flex align-items-start my-2" style="border-left-width: 1px; max-width:min-content">
+            postal_list_heading.setAttribute("class", "text-center");
+            res_html += `<li class="list-group-item d-flex align-items-start my-2" style="border-left-width: 1px; max-width:max-content">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold fs-0 text-decoration-underline">${
                           data[0].PostOffice[i].Name

@@ -3,6 +3,7 @@ var random_quote_text = document.querySelector("#random-quote");
 var random_quote_author = document.querySelector("#random-quote-author");
 var card_img1 = document.querySelector("#card-img1");
 var card_img2 = document.querySelector("#card-img2");
+var card_img3 = document.querySelector("#card-img3");
 
 randomQuoteFunction();
 
@@ -41,11 +42,16 @@ function render_card_images() {
         "src",
         "https://source.unsplash.com/random/925X617/?postbox"
     );
+    card_img3.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?news"
+    );
 }
 
 function renderCards() {
     card1Data();
     card2Data();
+    card3Data();
 }
 
 function card1Data() {
@@ -60,4 +66,11 @@ function card2Data() {
         "<i class='bi bi-mailbox2'></i> PIN - Post Index Number";
     document.querySelector("#content2").textContent =
         "PIN allows to get details of Post Office by searching Postal PIN Code or Post Office Branch Name of India.";
+}
+
+function card3Data() {
+    document.querySelector("#title3").innerHTML =
+        "<i class='bi bi-newspaper'></i> MRI - Most Recent Info";
+    document.querySelector("#content3").textContent =
+        "Check today's news brief on National, Politics, Sports, Business, Education, etc... Keep update ";
 }

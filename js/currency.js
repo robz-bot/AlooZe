@@ -72,19 +72,20 @@ function displayResults() {
             <div class="col-lg-8 col-sm-12 col-md-12">
                 <div class="alert alert-dark" role="alert">
                     <div class="row">
-                        <h4 class="alert-heading">Converted Successfully! </h4>
+                        <h2 class="alert-heading text-success badge rounded-pill bg-dark">Converted Successfully! </h2>
                     </div>
-                    <hr>
                     <div class="row">
-                        <p class="mb-0 text-uppercase ">
+                        <div class="col-lg-6 col-sm-12 col-md-12">
+                            <p class="mb-0 text-uppercase">
                             <strong>1 ${convert_from} </strong>equals <strong>${result_value} ${convert_to}</strong>
-                        </p>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-12">
+                             <button type="button" class="mx-3 btn-center btn btn-secondary btn-sm float-end w-50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                More Calculations?
+                             </button>
+                        </div>
                     </div>
-
-                    <div class="row my-4 mb-0">
-                        <button type="button" class="mx-3 btn btn-secondary btn-sm float-end w-50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        More Calculations?</button></div>
-
                 </div>
             </div>
             <div class="col-lg-2 col-sm-12 col-md-12"></div>`;
