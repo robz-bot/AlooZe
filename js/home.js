@@ -4,6 +4,8 @@ var random_quote_author = document.querySelector("#random-quote-author");
 var card_img1 = document.querySelector("#card-img1");
 var card_img2 = document.querySelector("#card-img2");
 var card_img3 = document.querySelector("#card-img3");
+var card_img4 = document.querySelector("#card-img4");
+var card_img5 = document.querySelector("#card-img5");
 
 randomQuoteFunction();
 
@@ -46,12 +48,22 @@ function render_card_images() {
         "src",
         "https://source.unsplash.com/random/925X617/?news"
     );
+    card_img4.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?weather"
+    );
+    card_img5.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?coding"
+    );
 }
 
 function renderCards() {
     card1Data();
     card2Data();
     card3Data();
+    card4Data();
+    card5Data();
 }
 
 function card1Data() {
@@ -72,5 +84,19 @@ function card3Data() {
     document.querySelector("#title3").innerHTML =
         "<i class='bi bi-newspaper'></i> MRI - Most Recent Info";
     document.querySelector("#content3").textContent =
-        "Check today's news brief on National, Politics, Sports, Business, Education, etc... Keep update ";
+        "Check today's news brief on National, Politics, Sports, Business, Education, etc... Keep update yourself";
+}
+
+function card4Data() {
+    document.querySelector("#title4").innerHTML =
+        "<i class='bi bi-cloud-lightning-rain-fill'></i> SWF - Subsequent Weather Forecast";
+    document.querySelector("#content4").textContent =
+        "This weather forecast establishes predictable meteorological conditions over a specific area where you are standing.";
+}
+
+function card5Data() {
+    document.querySelector("#title5").innerHTML =
+        "<i class='bi bi-code-square'></i> PYP - Prove Your Potential";
+    document.querySelector("#content5").textContent =
+        "Are you a programmer? To demonstrate your worth here, try to solve the problems in the timely coding contest.";
 }

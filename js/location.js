@@ -71,16 +71,16 @@ function showPosition(position) {
                 "/?" +
                 data.weather[0].main +
                 "')";
-            body.setAttribute(
-                "style",
-                "background-image:" +
-                randomImgUrl +
-                ";background-repeat: no-repeat;background-size: " +
-                w +
-                "px " +
-                h +
-                "px;"
-            );
+            // body.setAttribute(
+            //     "style",
+            //     "background-image:" +
+            //     randomImgUrl +
+            //     ";background-repeat: no-repeat;background-size: " +
+            //     w +
+            //     "px " +
+            //     h +
+            //     "px;"
+            // );
             resultdata.style.display = "flex";
             var resuldata = data;
             card1Binding(resuldata, kelvin);
@@ -140,7 +140,6 @@ function card1Binding(data, kelvin) {
         longitude: data.coord.lon,
     };
 
-    bindingHeader(convertedJson.locationName);
     bindingTableRow1(convertedJson);
     bindingTableRow2(convertedJson);
     bindingTableRow3(convertedJson);
@@ -175,6 +174,7 @@ function bindingHeader(locationName) {
 function bindingTableRow1(convertedJson) {
     var tr = document.createElement("tr");
     tr.setAttribute("style", "height:130px");
+    tr.setAttribute("class", "text-dark");
 
     var td1 = document.createElement("td");
     var td2 = document.createElement("td");
@@ -183,23 +183,23 @@ function bindingTableRow1(convertedJson) {
     var td5 = document.createElement("td");
 
     td1.innerHTML =
-        "<i class='bi bi-wind fs-1'></i><b> Wind:</b> " +
+        "<i class='bi bi-wind fs-1 text-primary'></i><b> Wind:</b> " +
         convertedJson.wind +
         " mph" +
         "<i class='bi bi-arrow-down-left'></i>";
     td2.innerHTML =
-        "<i class='bi bi-droplet-half fs-1'></i> <b>Humidity</b>: " +
+        "<i class='bi bi-droplet-half fs-1 text-primary'></i> <b>Humidity</b>: " +
         convertedJson.humidity +
         "%";
     td3.innerHTML =
-        "<i class='bi bi-bullseye fs-1'></i> <b>Visibility</b>: " +
+        "<i class='bi bi-bullseye fs-1 text-primary'></i> <b>Visibility</b>: " +
         convertedJson.visibility;
     td4.innerHTML =
-        "<i class='bi bi-alarm fs-1'></i> <b>Pressure: </b>" +
+        "<i class='bi bi-alarm fs-1 text-primary'></i> <b>Pressure: </b>" +
         convertedJson.pressure +
         " mb";
     td5.innerHTML =
-        "<i class='bi bi-clouds-fill fs-1'></i> <b>Cloudiness</b>: " +
+        "<i class='bi bi-clouds-fill fs-1 text-primary'></i> <b>Cloudiness</b>: " +
         convertedJson.cloudiness +
         "%";
 
@@ -217,6 +217,7 @@ function bindingTableRow1(convertedJson) {
 function bindingTableRow2(convertedJson) {
     var tr = document.createElement("tr");
     tr.setAttribute("style", "height:150px");
+    tr.setAttribute("class", "text-dark");
 
     var td1 = document.createElement("td");
     var td2 = document.createElement("td");
@@ -224,16 +225,16 @@ function bindingTableRow2(convertedJson) {
     var td4 = document.createElement("td");
 
     td1.innerHTML =
-        "<i class='bi bi-globe fs-1'></i> <br><b>Latitude</b><br> " +
+        "<i class='bi bi-globe fs-1 text-primary'></i> <br><b>Latitude</b><br> " +
         convertedJson.latitude;
     td2.innerHTML =
-        "<i class='bi bi-globe2 fs-1'></i> <br><b>Longitude</b><br> " +
+        "<i class='bi bi-globe2 fs-1 text-primary'></i> <br><b>Longitude</b><br> " +
         convertedJson.longitude;
     td3.innerHTML =
-        "<i class='bi bi-sunrise-fill fs-1'></i> <br><b>Sunrise</b><br> " +
+        "<i class='bi bi-sunrise-fill fs-1 text-primary'></i> <br><b>Sunrise</b><br> " +
         convertedJson.sunrise;
     td4.innerHTML =
-        "<i class='bi bi-sunset-fill fs-1'></i> <br><b>Sunset</b><br> " +
+        "<i class='bi bi-sunset-fill fs-1 text-primary'></i> <br><b>Sunset</b><br> " +
         convertedJson.sunset;
 
     table1.style = "text-align:right";
@@ -249,6 +250,7 @@ function bindingTableRow2(convertedJson) {
 function bindingTableRow3(convertedJson) {
     var tr = document.createElement("tr");
     tr.setAttribute("style", "height:150px");
+    tr.setAttribute("class", "text-dark");
 
     var td1 = document.createElement("td");
     td1.setAttribute("class", "colspan='4'");
