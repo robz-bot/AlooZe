@@ -1,13 +1,46 @@
 const RANDOM_QUOTES_BASE_URL = new URL("https://api.quotable.io/random");
 var random_quote_text = document.querySelector("#random-quote");
 var random_quote_author = document.querySelector("#random-quote-author");
+
+var searchCard = document.querySelector("#searchCard");
+
 var card_img1 = document.querySelector("#card-img1");
 var card_img2 = document.querySelector("#card-img2");
 var card_img3 = document.querySelector("#card-img3");
 var card_img4 = document.querySelector("#card-img4");
 var card_img5 = document.querySelector("#card-img5");
+var card_img6 = document.querySelector("#card-img6");
+var card_img7 = document.querySelector("#card-img7");
+
+var cardRow = document.querySelectorAll("#mainRow");
+var headingTags = document.getElementsByTagName("h5");
 
 randomQuoteFunction();
+searchCard.addEventListener("keyup", searchCards);
+
+function searchCards() {
+    var searchTxt = searchCard.value.toUpperCase();
+    console.log(searchTxt);
+    if (searchTxt.length > 0) {
+        for (var i = 0; i < cardRow[0].childElementCount; i++) {
+            let match = cardRow[0].children[i].getElementsByTagName("h5")[0];
+            console.log(match.textContent);
+            if (match) {
+                let textValue = match.textContent || match.innerHTML;
+                if (textValue.toUpperCase().includes(searchTxt)) {
+                    // if (textValue.toUpperCase().indexOf(searchTxt) > -1) {
+                    cardRow[0].children[i].style.display = "";
+                } else {
+                    cardRow[0].children[i].style.display = "none";
+                }
+            }
+        }
+    } else {
+        for (var i = 0; i < cardRow[0].childElementCount; i++) {
+            cardRow[0].children[i].style.display = "";
+        }
+    }
+}
 
 async function randomQuoteFunction() {
     random_quote_text.innerHTML =
@@ -56,6 +89,14 @@ function render_card_images() {
         "src",
         "https://source.unsplash.com/random/925X617/?coding"
     );
+    card_img6.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?language"
+    );
+    card_img7.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?QR"
+    );
 }
 
 function renderCards() {
@@ -64,6 +105,8 @@ function renderCards() {
     card3Data();
     card4Data();
     card5Data();
+    card6Data();
+    card7Data();
 }
 
 function card1Data() {
@@ -99,4 +142,18 @@ function card5Data() {
         "<i class='bi bi-code-square'></i> PYP - Prove Your Potential";
     document.querySelector("#content5").textContent =
         "Are you a programmer? To demonstrate your worth here, try to solve the problems in the timely coding contest.";
+}
+
+function card6Data() {
+    document.querySelector("#title6").innerHTML =
+        "<i class='bi bi-code-translate'></i> AZ - Alooze Translation";
+    document.querySelector("#content6").textContent =
+        "This tool will translate from the default language of English to any of the languages you specify.";
+}
+
+function card7Data() {
+    document.querySelector("#title7").innerHTML =
+        "<i class='bi bi-qr-code-scan'></i> QR - Your QR";
+    document.querySelector("#content7").textContent =
+        "Use this QR code to send your secret message. Are you concerned about your privacy? Go here";
 }
