@@ -168,5 +168,5 @@ function card8Data() {
     document.querySelector("#title8").innerHTML =
         "<i class='bi bi-journal-bookmark-fill'></i> AD - AlooZe Dictionary";
     document.querySelector("#content8").textContent =
-        "Use this QR code to send your secret message. Are you concerned about your privacy? Go here";
+        "This gathers information about a word and instructs when and where it should be used, as well as how to pronounce it. Expand your vocabulary.";
 }

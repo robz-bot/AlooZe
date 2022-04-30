@@ -18,6 +18,9 @@ searchInput.addEventListener("click", function() {
             if (resultData.length > 0) {
                 for (var i = 0; i <= resultData.length; i++) {
                     var phonetics = resultData[i].phonetics[0].audio;
+                    if (phonetics == null || phonetics == "") {
+                        phonetics = resultData[i].phonetics[1].audio;
+                    }
                     var meanings = resultData[i].meanings;
                     res_html += `  <div class="d-flex flex-wrap justify-content-evenly my-3">
         <audio controls>
