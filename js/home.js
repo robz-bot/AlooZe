@@ -11,6 +11,7 @@ var card_img4 = document.querySelector("#card-img4");
 var card_img5 = document.querySelector("#card-img5");
 var card_img6 = document.querySelector("#card-img6");
 var card_img7 = document.querySelector("#card-img7");
+var card_img8 = document.querySelector("#card-img8");
 
 var cardRow = document.querySelectorAll("#mainRow");
 var headingTags = document.getElementsByTagName("h5");
@@ -97,6 +98,10 @@ function render_card_images() {
         "src",
         "https://source.unsplash.com/random/925X617/?QR"
     );
+    card_img8.setAttribute(
+        "src",
+        "https://source.unsplash.com/random/925X617/?dictionary"
+    );
 }
 
 function renderCards() {
@@ -107,6 +112,7 @@ function renderCards() {
     card5Data();
     card6Data();
     card7Data();
+    card8Data();
 }
 
 function card1Data() {
@@ -155,5 +161,12 @@ function card7Data() {
     document.querySelector("#title7").innerHTML =
         "<i class='bi bi-qr-code-scan'></i> QR - Your QR";
     document.querySelector("#content7").textContent =
+        "Use this QR code to send your secret message. Are you concerned about your privacy? Go here";
+}
+
+function card8Data() {
+    document.querySelector("#title8").innerHTML =
+        "<i class='bi bi-journal-bookmark-fill'></i> AD - AlooZe Dictionary";
+    document.querySelector("#content8").textContent =
         "Use this QR code to send your secret message. Are you concerned about your privacy? Go here";
 }
