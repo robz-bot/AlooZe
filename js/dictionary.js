@@ -22,7 +22,7 @@ searchInput.addEventListener("click", function() {
                     var meanings = resultData[i].meanings;
                     res_html += `  <div class="d-flex flex-wrap justify-content-evenly my-3">
         <audio controls>
-            <source src="${phonetics}" type="audio/mpeg">
+            <source src="${phonetics.audio}" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>
     </div>
