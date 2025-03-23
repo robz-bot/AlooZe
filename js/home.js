@@ -1,4 +1,4 @@
-const RANDOM_QUOTES_BASE_URL = new URL("https://api.quotable.io/random");
+const RANDOM_QUOTES_BASE_URL = new URL("https://quotes-api-self.vercel.app/quote");
 var random_quote_text = document.querySelector("#random-quote");
 var random_quote_author = document.querySelector("#random-quote-author");
 
@@ -58,9 +58,9 @@ async function randomQuoteFunction() {
         }
         const data = await response.json();
         // console.log(data);
-        random_quote_text.innerHTML = data.content;
+        random_quote_text.innerHTML = data.quote;
         random_quote_author.innerHTML = data.author;
-        render_card_images();
+        // render_card_images();
         //working with title cards
         renderCards();
     } catch (err) {
@@ -107,9 +107,9 @@ function render_card_images() {
 function renderCards() {
     card1Data();
     card2Data();
-    card3Data();
+    // card3Data();
     card4Data();
-    card5Data();
+    // card5Data();
     card6Data();
     card7Data();
     card8Data();
